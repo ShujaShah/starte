@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//for test
 app.use(
   cors({
     origin: 'http:localhost:5173',
