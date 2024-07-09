@@ -6,6 +6,7 @@ function isAdmin(req, res, next) {
   try {
     const decoded = jwt.verify(token, process.env.JWTPrivateKey);
     req.user = decoded;
+    next();
     if (req.user.role !== 'admin')
       res.status(403).send('You are not authorized to perform this action...');
     return;
